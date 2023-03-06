@@ -86,7 +86,6 @@
        flow(1:3)=(stress0(1:3)-Sh)/Smises
        flow(4:ntens)=stress0(4:ntens)/Smises
        
-!     Solve for Smises and deqpl using Newton's method
        deqpl=0.d0
        Et=xn*Sy*(0.0001+eqplas)**(xn-1.d0)
 
