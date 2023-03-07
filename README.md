@@ -19,7 +19,7 @@ Create a new Job and link the user sub-routine (the .f file) using the 'User sub
 </p>
 
 To run case using Abaqus command enter relevant directory and enter the following commands:
-Abaqus job=<name of .inp file> user=<name of user subroutine file> interactive
+
 - for nonLocalLemaitre
 ```
 $ abaqus job=axiSymmetricNotchedBar.inp user=lemaitreDamageNonLocal.f interactive
