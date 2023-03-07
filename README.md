@@ -10,14 +10,27 @@ This repository contains implementations of the non-local Lemaitre damage model.
 1. nonLocalLemaitre: compatible with Abaqus/2020 or newer
 2. HETVAL_nonLocalLemaitre: Compatible with older versions of Abaqus (at least as old as Abaqus/2018)
 
-To run using the Abaqus GUI, selecting file/import in the menu bar and select the .inp file.
-Create a new Job and link the user sub-routine (the .f file)
-To run case using abaqus command enter relevant directory and enter the following commands:
+To run using the Abaqus GUI, select file-->import in the menu bar and select the .inp file.
+Create a new Job and link the user sub-routine (the .f file) using the 'User subroutine file' option
 
+<p float="center">
+  <br>
+  <img style="float: center;" src="docs/images/abaqusJob_Image.PNG" width="25%" height="25% style="border-radius: 2em;"> 
+</p>
+
+To run case using Abaqus command enter relevant directory and enter the following commands:
+Abaqus job=<name of .inp file> user=<name of user subroutine file> interactive
+- for nonLocalLemaitre
 ```
-$ git clone  https://github.com/awhelanUCD/Fantasy-Premier-League-Website.git
+$ abaqus job=axiSymmetricNotchedBar.inp user=lemaitreDamageNonLocal.f interactive
+```
+- for HETVAL_nonLocalLemaitre
+```
+$ abaqus job=HETVAL_axiSymmetricNotchedBar.inp user=HETVAL_lemaitreDamageNonLocal.f interactive
 ```
 
-```
-$ git clone  https://github.com/awhelanUCD/Fantasy-Premier-League-Website.git
-```
+### Example Result:
+<p float="center">
+  <br>
+  <img style="float: center;" src="docs/images/abaqus_axiNotchedDamage.PNG" width="50%" height="50% style="border-radius: 2em;"> 
+</p>
